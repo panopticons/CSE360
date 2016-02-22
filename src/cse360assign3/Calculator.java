@@ -9,10 +9,12 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	StringBuilder arrayString = new StringBuilder();
 	
 	/** Total is 0 **/
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		arrayString.append(0);
 	}
 	
 	/** Gets running total
@@ -27,6 +29,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		arrayString.append(" + " + value);
 	}
 	
 	/** Subtracts specified value from total
@@ -34,6 +37,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		arrayString.append(" - " + value);
 	}
 	
 	/** Multiplies total by specified value
@@ -41,6 +45,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		arrayString.append(" * " + value);
 	}
 	
 	/** Divides total by specified value
@@ -51,13 +56,14 @@ public class Calculator {
 			total = 0;
 		else
 			total = total / value;
+		arrayString.append(" / " + value);
 	}
 	
-	/**
+	/** Returns history of all actions as a string
 	 * 
-	 * @return
+	 * @return text action history
 	 */
 	public String getHistory () {
-		return "";
+		return arrayString.toString();
 	}
 }

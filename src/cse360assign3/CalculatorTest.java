@@ -74,6 +74,11 @@ public class CalculatorTest {
 	@Test
 	public void testGetHistory() {
 		Calculator newCalc = new Calculator();
-		assertEquals("", newCalc.getHistory());
+		newCalc.add(9);
+		newCalc.subtract(3);
+		newCalc.multiply(3);
+		newCalc.divide(2);
+		newCalc.add(1);
+		assertEquals("0 + 9 - 3 * 3 / 2 + 1", newCalc.getHistory());
 	}
 }
